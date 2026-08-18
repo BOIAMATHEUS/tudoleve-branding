@@ -202,7 +202,8 @@ footer{text-align:center;padding:0 0 40px;font-size:12.5px;color:var(--muted)}
 (function(){
 "use strict";
 
-var WHATSAPP = ""; // numero do designer com DDI, ex "5511999999999". vazio abre o seletor de contato
+// destinatario das respostas, montado em partes pra nao ficar catavel por robo de scraping
+var WHATSAPP = ["55","19","99146","3731"].join("");
 
 var BLOCKS = [
 {
