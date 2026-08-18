@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Questionário de Branding | Tudo Leve Suplementos</title>
+<meta name="description" content="Etapa 1 do rebranding da Tudo Leve: brandbook e sistema de rótulo. Leva de 20 a 30 minutos.">
+<meta property="og:title" content="Questionário de Branding | Tudo Leve Suplementos">
+<meta property="og:description" content="Etapa 1 do rebranding: brandbook e sistema de rótulo. Leva de 20 a 30 minutos e salva sozinho.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-900:#0B2A24;
+  --green-800:#123B33;
+  --green-700:#1A4F44;
+  --green-100:#DCE8E3;
+  --gold:#C9A227;
+  --gold-soft:#E3C766;
+  --cream:#F6F1E6;
+  --cream-2:#EFE8D8;
+  --ink:#16211E;
+  --muted:#5E6E69;
+  --line:#D9D0BC;
+  --white:#fff;
+  --radius:14px;
+  --shadow:0 1px 2px rgba(11,42,36,.05),0 8px 24px rgba(11,42,36,.07);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  font-family:Montserrat,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  background:var(--cream);
+  color:var(--ink);
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+
+/* topo */
+header{background:var(--green-800);color:var(--cream);padding:26px 0 22px}
+.brand{display:flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.leaf{width:16px;height:16px;flex:none}
+h1{font-size:23px;line-height:1.25;margin:12px 0 6px;font-weight:700}
+header p{margin:0;color:#BFD2CB;font-size:14px}
+
+/* progresso */
+.progress-bar{position:sticky;top:0;z-index:20;background:var(--cream);border-bottom:1px solid var(--line)}
+.progress-inner{display:flex;align-items:center;gap:12px;padding:10px 0}
+.track{flex:1;height:6px;background:var(--cream-2);border-radius:99px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--green-700),var(--gold));border-radius:99px;transition:width .35s cubic-bezier(.4,0,.2,1)}
+.pct{font-size:12px;font-weight:600;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.saved{font-size:11px;color:var(--muted);opacity:0;transition:opacity .3s;white-space:nowrap}
+.saved.on{opacity:1}
+
+main{padding:28px 0 60px}
+.step{display:none;animation:in .3s ease}
+.step.active{display:block}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:6px}
+h2{font-size:21px;margin:0 0 8px;line-height:1.3}
+.lead{color:var(--muted);font-size:15px;margin:0 0 24px}
+
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:18px;margin-bottom:14px;box-shadow:var(--shadow)}
+.q{display:flex;gap:10px;margin-bottom:10px}
+.num{flex:none;width:26px;height:26px;border-radius:8px;background:var(--green-100);color:var(--green-800);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.qt{font-weight:600;font-size:15.5px;line-height:1.4}
+.hint{color:var(--muted);font-size:13.5px;margin:6px 0 0;font-weight:400}
+
+textarea,input[type=text]{
+  width:100%;font:inherit;font-size:15px;color:var(--ink);
+  background:var(--cream);border:1px solid var(--line);border-radius:10px;
+  padding:11px 12px;resize:vertical;transition:border-color .15s,background .15s;
+}
+textarea{min-height:86px}
+textarea:focus,input[type=text]:focus{outline:none;border-color:var(--green-700);background:var(--white)}
+textarea::placeholder,input::placeholder{color:#9AA8A3}
+
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opt{position:relative}
+.opt input{position:absolute;opacity:0;width:100%;height:100%;left:0;top:0;cursor:pointer;margin:0}
+.opt span{
+  display:block;padding:8px 13px;border:1px solid var(--line);border-radius:99px;
+  background:var(--cream);font-size:14px;cursor:pointer;transition:all .15s;user-select:none
+}
+.opt input:checked + span{background:var(--green-800);border-color:var(--green-800);color:var(--cream);font-weight:600}
+.opt input:focus-visible + span{outline:2px solid var(--gold);outline-offset:2px}
+
+/* escalas */
+.scale{margin-bottom:20px}
+.scale:last-child{margin-bottom:4px}
+.scale-labels{display:flex;justify-content:space-between;font-size:13px;color:var(--muted);gap:12px;margin-bottom:7px}
+.scale-labels b{color:var(--ink);font-weight:600}
+.scale-row{display:flex;align-items:center;gap:12px}
+input[type=range]{flex:1;-webkit-appearance:none;appearance:none;height:6px;border-radius:99px;background:var(--cream-2);outline:none;margin:8px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--green-800);border:3px solid var(--white);box-shadow:0 1px 6px rgba(11,42,36,.3);cursor:pointer}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--green-800);border:3px solid var(--white);box-shadow:0 1px 6px rgba(11,42,36,.3);cursor:pointer;border-width:3px}
+.scale-val{width:30px;text-align:center;font-weight:700;font-size:15px;color:var(--green-800);font-variant-numeric:tabular-nums}
+.scale.untouched .scale-val{color:#B7C2BE}
+
+/* produtos */
+.prod{display:grid;grid-template-columns:1fr;gap:8px;padding:13px 0;border-bottom:1px solid var(--cream-2)}
+.prod:last-child{border-bottom:none;padding-bottom:2px}
+.prod-name{font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px}
+.prod-name i{font-style:normal;font-size:11px;color:var(--muted);font-weight:500;background:var(--cream-2);padding:2px 7px;border-radius:99px}
+.prod-fields{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.prod-fields input{font-size:14px;padding:9px 10px}
+.prod-fields select{
+  font:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--line);
+  border-radius:10px;background:var(--cream);color:var(--ink);width:100%;
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' stroke='%235E6E69' stroke-width='1.6' fill='none' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 10px center;padding-right:28px;
+}
+.prod-fields select:focus,.prod-fields input:focus{outline:none;border-color:var(--green-700);background-color:var(--white)}
+@media(max-width:520px){.prod-fields{grid-template-columns:1fr}}
+
+/* nav */
+.nav{display:flex;gap:10px;margin-top:24px;align-items:center}
+.btn{
+  font:inherit;font-weight:600;font-size:15px;border-radius:11px;padding:13px 22px;
+  border:1px solid transparent;cursor:pointer;transition:transform .1s,filter .15s;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none
+}
+.btn:active{transform:scale(.985)}
+.btn-primary{background:var(--green-800);color:var(--cream);flex:1}
+.btn-primary:hover{filter:brightness(1.12)}
+.btn-ghost{background:transparent;color:var(--muted);border-color:var(--line)}
+.btn-ghost:hover{background:var(--white)}
+.btn-gold{background:var(--gold);color:#2B2205;flex:1}
+.btn-gold:hover{filter:brightness(1.06)}
+.btn-block{width:100%;margin-bottom:10px}
+.skip{display:block;text-align:center;margin-top:14px;font-size:13.5px;color:var(--muted);text-decoration:underline;background:none;border:none;font-family:inherit;cursor:pointer;width:100%}
+
+.note{background:var(--green-100);border-left:3px solid var(--green-700);border-radius:0 10px 10px 0;padding:13px 15px;font-size:14px;margin-bottom:20px;color:var(--green-900)}
+.note b{font-weight:700}
+
+/* intro */
+.finding{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--cream-2);font-size:14.5px}
+.finding:last-child{border-bottom:none}
+.finding em{font-style:normal;color:var(--gold);font-weight:700;font-size:14px;flex:none;width:18px}
+.meta{display:flex;gap:18px;font-size:13px;color:var(--muted);margin:18px 0 4px;flex-wrap:wrap}
+.meta div{display:flex;align-items:center;gap:6px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--gold);flex:none}
+
+/* final */
+.done-mark{width:52px;height:52px;border-radius:50%;background:var(--green-800);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(80px);background:var(--green-900);color:var(--cream);padding:13px 20px;border-radius:11px;font-size:14px;font-weight:500;box-shadow:0 8px 30px rgba(11,42,36,.3);transition:transform .3s cubic-bezier(.4,0,.2,1);z-index:50;max-width:calc(100vw - 40px);text-align:center}
+.toast.on{transform:translateX(-50%) translateY(0)}
+footer{text-align:center;padding:0 0 40px;font-size:12.5px;color:var(--muted)}
+@media(max-width:520px){
+  h1{font-size:20px}h2{font-size:19px}
+  .card{padding:15px}
+  .wrap{padding:0 15px}
+  .nav{position:sticky;bottom:0;background:linear-gradient(to top,var(--cream) 70%,transparent);padding:12px 0;margin-top:18px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="brand">
+      <svg class="leaf" viewBox="0 0 24 24" fill="none"><path d="M12 21C12 21 3 16 3 9.5 3 5.9 5.9 3 9.5 3c1.6 0 3 .6 4 1.6C14.5 3.6 15.9 3 17.5 3 21.1 3 24 5.9 24 9.5" stroke="#E3C766" stroke-width="1.7" stroke-linecap="round"/><path d="M12 21c0-5 2-9 6-11" stroke="#E3C766" stroke-width="1.7" stroke-linecap="round"/></svg>
+      Tudo Leve Suplementos
+    </div>
+    <h1>Questionário de Branding</h1>
+    <p>Etapa 1 do rebranding: brandbook e sistema de rótulo</p>
+  </div>
+</header>
+
+<div class="progress-bar">
+  <div class="wrap progress-inner">
+    <div class="track"><div class="fill" id="fill"></div></div>
+    <div class="pct" id="pct">0%</div>
+    <div class="saved" id="saved">salvo</div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- INTRO -->
+  <section class="step active" id="step-0">
+    <div class="eyebrow">Antes de começar</div>
+    <h2>Gabriel, esse é o material que vira o brandbook</h2>
+    <p class="lead">Quanto mais cru e honesto, melhor sai. Não tem resposta errada, e "não sei" também é uma resposta útil.</p>
+
+    <div class="card">
+      <div class="eyebrow" style="margin-bottom:10px">O que eu já vi olhando os 23 potes</div>
+      <div class="finding"><em>1</em><div>Os 23 não são uma linha, são 23 marcas. O CalmSense é verde escuro com dourado, folha ornamental e tipografia clássica. O ThermoTea Slim é pink chapado, tipografia pesada e selo americano. Lado a lado na tela, ninguém diz que saíram da mesma empresa.</div></div>
+      <div class="finding"><em>2</em><div>A logo é a única coisa que se repete em todos. Ela está sozinha segurando a identidade inteira, e isso é pouco.</div></div>
+      <div class="finding"><em>3</em><div>Os nomes seguem quatro lógicas ao mesmo tempo: inglês (CalmSense, LipoFlow Day), técnico (MAG-5, Vit D3), descritivo (Cabelos, Unhas e Pele) e inventado (Creaticol, Morolipo). Isso pesa na hora de o cliente escolher.</div></div>
+    </div>
+
+    <div class="note">
+      <b>Leva de 20 a 30 minutos.</b> O Bloco 1 é o que me destrava pra desenhar, responde ele inteiro. Do Bloco 2 em diante pode vir depois, dá pra fechar a página e voltar que fica tudo salvo.
+    </div>
+
+    <div class="meta">
+      <div><span class="dot"></span>6 blocos</div>
+      <div><span class="dot"></span>salva sozinho</div>
+      <div><span class="dot"></span>pode pular pergunta</div>
+    </div>
+
+    <div class="nav"><button class="btn btn-primary" data-go="1">Começar</button></div>
+  </section>
+
+  <!-- blocos gerados aqui -->
+  <div id="blocks"></div>
+
+  <!-- FINAL -->
+  <section class="step" id="step-final">
+    <div class="done-mark">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="#F6F1E6" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h2>Prontinho, agora é só me enviar</h2>
+    <p class="lead" id="final-sub">Suas respostas ficam salvas nesse aparelho. Toca no botão abaixo que elas vão pro WhatsApp já escritas, é só apertar enviar.</p>
+
+    <button class="btn btn-gold btn-block" id="send-wa">Enviar respostas pelo WhatsApp</button>
+    <button class="btn btn-ghost btn-block" id="copy-all">Copiar tudo em texto</button>
+    <button class="btn btn-ghost btn-block" id="download">Baixar como arquivo</button>
+
+    <button class="skip" data-go="1">Voltar e revisar as respostas</button>
+  </section>
+
+</main>
+
+<footer class="wrap">Tudo Leve Suplementos, rebranding 2026</footer>
+<div class="toast" id="toast"></div>
+
+<script>
+(function(){
+"use strict";
+
+var WHATSAPP = ""; // numero do designer com DDI, ex "5511999999999". vazio abre o seletor de contato
+
+var PRODUCTS = ["CalmSense","MAG-5","Magnositol","Cabelos, Unhas e Pele","DrenaFirm","LipoFlow Day","Femme40","Col-Agen","Creaticol","Crealong","LipoFit MAX","ART Col-Flex","Curcumina","Feno Grego","Morolipo","Ômega 3","NAC Power Blend","Imunodetox","ThermoTea Slim","Vit D3","Vitamina B12","COE Q10 Plus","No Apetit"];
+var PRESET_FORMAT = {"CalmSense":"cápsula","ThermoTea Slim":"chá"};
+
+var BLOCKS = [
+{
+  title:"O essencial",
+  lead:"Essas 12 são as que travam o projeto. Se só der tempo de responder esse bloco, já me manda assim mesmo.",
+  qs:[
+    {id:"q1",n:1,t:"Em uma frase, o que a Tudo Leve vende e para quem?",type:"textarea"},
+    {id:"q2",n:2,t:"Se a Tudo Leve fechasse amanhã, o que faltaria pro seu cliente?",h:"O que ele não acha igual em outro lugar.",type:"textarea"},
+    {id:"q3",n:3,t:"Por que ele compra de vocês e não do concorrente do lado, no mesmo preço?",h:"Dosagem, indicação de profissional, confiança, entrega, sabor, atendimento.",type:"textarea"},
+    {id:"q4",n:4,t:"Descreve o cliente ideal como se fosse uma pessoa.",h:"Idade, gênero, o que ele sente no corpo, o que ele já tentou antes e não funcionou.",type:"textarea"},
+    {id:"q5",n:5,t:"Olhando um pote de vocês por 2 segundos no celular, o que a pessoa precisa entender na hora?",type:"textarea"},
+    {id:"q6",n:6,t:"Cita 3 concorrentes diretos.",h:"Pra cada um, o que você copiaria se pudesse copiar uma coisa só.",type:"textarea"},
+    {id:"q7",n:7,t:"Cita 3 marcas com a cara que você queria ter, e 2 que você não quer parecer de jeito nenhum.",h:"De qualquer setor, não precisa ser suplemento. Uma linha de porquê em cada.",type:"textarea"},
+    {id:"q8",n:8,t:"O nome e a logo Tudo Leve:",type:"radio",o:["Ficam como estão","Podem ganhar um ajuste","Podem ser refeitos do zero","Ainda não sei"]},
+    {id:"q9",n:9,t:"Tem alguma coisa intocável na marca hoje?",h:"Uma cor, o símbolo da folha, um nome de produto, uma frase.",type:"textarea"},
+    {id:"q10",n:10,t:"Como o cliente escolhe entre os 23?",h:"Marca o que mais acontece hoje. Isso define o que vai dominar o rótulo novo.",type:"radio",o:["Pelo que ele sente (sono, cabelo, inchaço)","Pelo ingrediente (colágeno, magnésio, creatina)","Pela linha ou família","Pelo preço"]},
+    {id:"q11a",n:11,t:"Onde esse rótulo vai ser visto?",h:"Marca todos que valem.",type:"checks",o:["Site próprio","Marketplace","Farmácia","Academia","Consultório","Feira e evento","Instagram"]},
+    {id:"q11b",n:"11b",t:"E qual desses traz mais faturamento hoje?",type:"text"},
+    {id:"q12a",n:12,t:"Quando o primeiro rótulo novo precisa estar fechado na gráfica?",h:"Data real, não a ideal.",type:"text"},
+    {id:"q12b",n:"12b",t:"Quem aprova o material junto comigo?",h:"Só você, ou tem mais alguém na decisão.",type:"text"}
+  ]
+},
+{
+  title:"Produto e portfólio",
+  lead:"A parte de baixo é rápida. Se não souber alguma, deixa em branco.",
+  qs:[
+    {id:"prods",n:13,t:"Os 23 produtos.",h:"Benefício em poucas palavras, a linha ou família se existir, e se ele vende bem.",type:"products"},
+    {id:"q14",n:14,t:"O último aparece como “No Apetit” num arquivo e “Bon Apetit” noutro, e os dois significam o oposto. Qual é o certo?",h:"Tem outros produtos com nome divergente entre rótulo, site e marketplace?",type:"textarea"},
+    {id:"q15",n:15,t:"Quais produtos novos entram nos próximos 12 meses?",h:"Abrem categoria nova?",type:"textarea"},
+    {id:"q16",n:16,t:"Sobre os nomes atuais:",h:"Padronizar a lógica muda bastante o desenho do rótulo.",type:"radio",o:["Ficam como estão","Topo padronizar a lógica de todos","Alguns podem mudar, outros não","Ainda não sei"]},
+    {id:"q17",n:17,t:"Quais combos vocês mais vendem?",h:"São fixos ou o cliente monta?",type:"textarea"},
+    {id:"q18",n:18,t:"Qual é o produto herói, o que mais sai? E qual você queria que vendesse mais?",type:"textarea"},
+    {id:"q19",n:19,t:"Faixa de preço dos produtos e ticket médio do pedido.",type:"text"},
+    {id:"q20",n:20,t:"Depois do rebranding o preço:",type:"radio",o:["Sobe","Fica igual","Cai","Ainda não sei"]}
+  ]
+},
+{
+  title:"Personalidade da marca",
+  lead:"Arrasta as barrinhas. É o que define tipografia, cor e o tom de tudo depois.",
+  qs:[
+    {id:"scales",n:21,t:"Onde a marca deve ficar em cada eixo?",type:"scales",o:[
+      ["Clínica e técnica","Afetiva e humana"],
+      ["Premium e cara","Acessível e popular"],
+      ["Científica, ingrediente e dose","Natural, planta e bem-estar"],
+      ["Séria","Leve e divertida"],
+      ["Minimalista, pouco texto","Informativa, tudo explicado"],
+      ["Feminina","Masculina"]
+    ]},
+    {id:"q22",n:22,t:"Cinco adjetivos que a Tudo Leve é.",type:"text"},
+    {id:"q23",n:23,t:"Cinco adjetivos que ela não é, mesmo que fosse tentador.",type:"text"},
+    {id:"q24",n:24,t:"Se a marca fosse uma pessoa falando com o cliente, ela fala mais como quem?",type:"radio",o:["Nutricionista","Amiga","Treinador","Farmacêutico","Vendedor"]},
+    {id:"q24b",n:"24b",t:"Escreve uma frase do jeito que ela falaria.",type:"text"},
+    {id:"q25",n:25,t:"Palavras e promessas que você nunca quer ver num rótulo ou anúncio de vocês.",type:"textarea"},
+    {id:"q26",n:26,t:"Tem slogan hoje? Mantém, ajusta, ou cria novo?",type:"text"},
+    {id:"q27",n:27,t:"De onde veio o nome Tudo Leve? Tem história por trás?",type:"textarea"}
+  ]
+},
+{
+  title:"Rótulo, gráfica e regras",
+  lead:"Esse bloco é técnico. Se precisar perguntar pra alguém aí, sem pressa, mas é o que evita retrabalho na hora de imprimir.",
+  qs:[
+    {id:"q28",n:28,t:"Qual gráfica imprime hoje, e você tem contato direto?",h:"Preciso falar com ela sobre faca e fechamento de arquivo.",type:"text"},
+    {id:"q29",n:29,t:"Material do rótulo atual:",type:"checks",o:["Adesivo couché","BOPP","Sleeve","Cartucho","Não sei"]},
+    {id:"q30",n:30,t:"Tem limite de cores por impressão, ou custo extra por cor?",h:"E quais acabamentos existem: verniz localizado, fosco, hot stamp, relevo.",type:"textarea"},
+    {id:"q31",n:31,t:"Vocês têm o arquivo da faca dos 3 formatos?",h:"Pote de pó, pote de cápsula e pote de chá, em .ai, .pdf ou .cdr.",type:"radio",o:["Tenho os três","Tenho alguns","Não tenho","Vou procurar"]},
+    {id:"q32",n:32,t:"Vocês têm o arquivo aberto dos rótulos atuais, e de quem é o direito sobre eles?",h:"Se não tiver, eu redesenho do zero, só preciso saber antes.",type:"textarea"},
+    {id:"q33",n:33,t:"Quem fornece os dizeres legais de cada produto?",h:"Tabela nutricional, composição, registro, SAC, lote, validade, código de barras, advertências.",type:"text"},
+    {id:"q34",n:34,t:"Quais selos precisam entrar?",type:"checks",o:["Vegano","Sem glúten","Sem lactose","Zero açúcar","Número de doses","Sabor","Sem corantes"]},
+    {id:"q35",n:35,t:"O selo “FDA USA empresa certificada” do ThermoTea vale pra todos os produtos, e quem validou ele?",h:"Pergunto porque esse tipo de selo é o que mais gera notificação em marketplace, e eu prefiro checar antes de replicar em 23 rótulos.",type:"textarea"},
+    {id:"q36",n:36,t:"Já tiveram reprovação, notificação ou pedido de ajuste em rótulo?",h:"Por órgão fiscalizador ou por marketplace.",type:"textarea"},
+    {id:"q37",n:37,t:"O rótulo é:",type:"radio",o:["Só em português","Tem exportação no radar","Mercosul, precisa espanhol"]},
+    {id:"q38",n:38,t:"Tem alguma informação que hoje some, fica ilegível ou gera dúvida no pote e que te incomoda?",type:"textarea"}
+  ]
+},
+{
+  title:"Onde a marca aparece",
+  lead:"Isso define o tamanho do brandbook e o que precisa de template.",
+  qs:[
+    {id:"q39",n:39,t:"Além do rótulo, o que mais precisa de aplicação?",type:"checks",o:["Caixa de envio","Cartucho","Sacola","Insert ou cartão","Etiqueta","Uniforme","Banner de feira","Material de PDV"]},
+    {id:"q40",n:40,t:"Quem cuida do site e das redes hoje?",h:"Precisa de template pronto pra essa pessoa trabalhar sozinha?",type:"text"},
+    {id:"q41",n:41,t:"Vocês vendem em marketplace? Quais?",h:"Isso pesa na decisão, porque em imagem pequena o rótulo precisa de outra hierarquia.",type:"checks",o:["Mercado Livre","Amazon","Shopee","Magalu","Não vendemos"]},
+    {id:"q42",n:42,t:"O site novo mantém a lógica de escolher pelo que a pessoa sente?",h:"Se sim, o rótulo tem que espelhar essa mesma divisão.",type:"radio",o:["Sim, mantém","Vai mudar","Ainda não sei"]}
+  ]
+},
+{
+  title:"Sucesso e risco",
+  lead:"Últimas três. Essas eu uso pra saber se acertei no fim.",
+  qs:[
+    {id:"q43",n:43,t:"Daqui a 6 meses, o que precisa ter acontecido pra você dizer que o rebranding valeu?",h:"Conversão no site, entrada em farmácia, preço médio maior, orgulho de mostrar o produto.",type:"textarea"},
+    {id:"q44",n:44,t:"Qual o seu maior medo nesse projeto?",type:"textarea"},
+    {id:"q45",n:45,t:"Tem alguma coisa que eu não perguntei e que você acha que eu precisava saber?",type:"textarea"}
+  ]
+}
+];
+
+var KEY="tudoleve_branding_v1";
+var data={};
+try{ data=JSON.parse(localStorage.getItem(KEY)||"{}"); }catch(e){ data={}; }
+
+var $=function(s){return document.querySelector(s)};
+var esc=function(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;")};
+
+/* ---------- render ---------- */
+var host=$("#blocks"), html="";
+BLOCKS.forEach(function(b,bi){
+  var i=bi+1;
+  html+='<section class="step" id="step-'+i+'">';
+  html+='<div class="eyebrow">Bloco '+i+' de 6</div><h2>'+esc(b.title)+'</h2><p class="lead">'+esc(b.lead)+'</p>';
+  b.qs.forEach(function(q){
+    html+='<div class="card"><div class="q"><div class="num">'+q.n+'</div><div><div class="qt">'+q.t+'</div>'+(q.h?'<p class="hint">'+esc(q.h)+'</p>':'')+'</div></div>';
+    var v=data[q.id];
+    if(q.type==="textarea"){
+      html+='<textarea data-id="'+q.id+'" placeholder="Escreve do seu jeito">'+esc(v||"")+'</textarea>';
+    }else if(q.type==="text"){
+      html+='<input type="text" data-id="'+q.id+'" value="'+esc(v||"")+'" placeholder="Escreve aqui">';
+    }else if(q.type==="radio"){
+      html+='<div class="opts">';
+      q.o.forEach(function(o,oi){
+        html+='<label class="opt"><input type="radio" name="'+q.id+'" data-id="'+q.id+'" value="'+esc(o)+'"'+(v===o?" checked":"")+'><span>'+esc(o)+'</span></label>';
+      });
+      html+='</div>';
+    }else if(q.type==="checks"){
+      var arr=Array.isArray(v)?v:[];
+      html+='<div class="opts">';
+      q.o.forEach(function(o){
+        html+='<label class="opt"><input type="checkbox" data-id="'+q.id+'" data-multi="1" value="'+esc(o)+'"'+(arr.indexOf(o)>-1?" checked":"")+'><span>'+esc(o)+'</span></label>';
+      });
+      html+='</div>';
+    }else if(q.type==="scales"){
+      q.o.forEach(function(pair,si){
+        var sid=q.id+"_"+si, sv=data[sid];
+        html+='<div class="scale'+(sv==null?" untouched":"")+'" data-scale="'+sid+'">'+
+          '<div class="scale-labels"><b>'+esc(pair[0])+'</b><b>'+esc(pair[1])+'</b></div>'+
+          '<div class="scale-row"><input type="range" min="0" max="10" step="1" value="'+(sv==null?5:sv)+'" data-id="'+sid+'" data-scale-input="1">'+
+          '<div class="scale-val">'+(sv==null?"-":sv)+'</div></div></div>';
+      });
+    }else if(q.type==="products"){
+      PRODUCTS.forEach(function(p,pi){
+        var b1=data["p_"+pi+"_ben"]||"", b2=data["p_"+pi+"_lin"]||"", b3=data["p_"+pi+"_sell"]||"";
+        html+='<div class="prod"><div class="prod-name">'+esc(p)+(PRESET_FORMAT[p]?' <i>'+PRESET_FORMAT[p]+'</i>':'')+'</div>'+
+          '<div class="prod-fields">'+
+          '<input type="text" data-id="p_'+pi+'_ben" value="'+esc(b1)+'" placeholder="Benefício">'+
+          '<input type="text" data-id="p_'+pi+'_lin" value="'+esc(b2)+'" placeholder="Linha ou família">'+
+          '</div>'+
+          '<div class="prod-fields"><select data-id="p_'+pi+'_sell">'+
+            ['','Vende muito','Vende razoável','Vende pouco'].map(function(op){
+              return '<option value="'+esc(op)+'"'+(b3===op?" selected":"")+'>'+(op||"Vende bem?")+'</option>';
+            }).join('')+
+          '</select><span></span></div></div>';
+      });
+    }
+    html+='</div>';
+  });
+  html+='<div class="nav"><button class="btn btn-ghost" data-go="'+(i-1)+'">Voltar</button><button class="btn btn-primary" data-go="'+(i+1)+'">'+(i===6?"Finalizar":"Próximo")+'</button></div>';
+  if(i===1) html+='<button class="skip" data-go="final">Só vou responder esse bloco por enquanto, quero enviar</button>';
+  html+='</section>';
+});
+host.innerHTML=html;
+
+/* ---------- estado ---------- */
+var saveT=null;
+function save(){
+  try{ localStorage.setItem(KEY,JSON.stringify(data)); }catch(e){}
+  var s=$("#saved"); s.classList.add("on");
+  clearTimeout(saveT); saveT=setTimeout(function(){s.classList.remove("on")},1400);
+  progress();
+}
+
+document.addEventListener("input",function(e){
+  var el=e.target, id=el.getAttribute("data-id");
+  if(!id) return;
+  if(el.type==="range"){
+    data[id]=+el.value;
+    var box=el.closest(".scale");
+    box.classList.remove("untouched");
+    box.querySelector(".scale-val").textContent=el.value;
+  }else{
+    data[id]=el.value;
+  }
+  save();
+});
+
+document.addEventListener("change",function(e){
+  var el=e.target, id=el.getAttribute("data-id");
+  if(!id) return;
+  if(el.type==="checkbox"){
+    var arr=Array.isArray(data[id])?data[id].slice():[];
+    var i=arr.indexOf(el.value);
+    if(el.checked){ if(i<0) arr.push(el.value); } else if(i>-1){ arr.splice(i,1); }
+    data[id]=arr; save();
+  }else if(el.type==="radio"||el.tagName==="SELECT"){
+    data[id]=el.value; save();
+  }
+});
+
+/* ---------- progresso ---------- */
+var TOTAL=0;
+BLOCKS.forEach(function(b){ b.qs.forEach(function(q){
+  if(q.type==="scales") TOTAL+=q.o.length;
+  else if(q.type==="products") TOTAL+=PRODUCTS.length;
+  else TOTAL+=1;
+});});
+
+function filled(){
+  var n=0;
+  BLOCKS.forEach(function(b){ b.qs.forEach(function(q){
+    if(q.type==="scales"){ q.o.forEach(function(_,si){ if(data[q.id+"_"+si]!=null) n++; }); }
+    else if(q.type==="products"){ PRODUCTS.forEach(function(_,pi){ if((data["p_"+pi+"_ben"]||"").trim()||(data["p_"+pi+"_lin"]||"").trim()||data["p_"+pi+"_sell"]) n++; }); }
+    else{
+      var v=data[q.id];
+      if(Array.isArray(v)? v.length>0 : (v||"").toString().trim()) n++;
+    }
+  });});
+  return n;
+}
+function progress(){
+  var p=Math.round(filled()/TOTAL*100);
+  $("#fill").style.width=p+"%";
+  $("#pct").textContent=p+"%";
+}
+
+/* ---------- navegação ---------- */
+function go(t){
+  var steps=document.querySelectorAll(".step");
+  for(var i=0;i<steps.length;i++) steps[i].classList.remove("active");
+  var el=document.getElementById("step-"+t);
+  if(!el) el=document.getElementById("step-final");
+  el.classList.add("active");
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(t==="final"||t===7||t==="7") buildSummary();
+}
+document.addEventListener("click",function(e){
+  var b=e.target.closest("[data-go]");
+  if(!b) return;
+  var t=b.getAttribute("data-go");
+  go(t==="7"?"final":t);
+});
+
+/* ---------- saída ---------- */
+function buildText(){
+  var out=["QUESTIONÁRIO DE BRANDING - TUDO LEVE","Respondido por Gabriel",""];
+  BLOCKS.forEach(function(b,bi){
+    var lines=[];
+    b.qs.forEach(function(q){
+      if(q.type==="scales"){
+        var any=[];
+        q.o.forEach(function(pair,si){
+          var v=data[q.id+"_"+si];
+          if(v!=null) any.push("   "+pair[0]+" 0 ..."+v+"... 10 "+pair[1]);
+        });
+        if(any.length) lines.push(q.n+". Personalidade:\n"+any.join("\n"));
+      }else if(q.type==="products"){
+        var rows=[];
+        PRODUCTS.forEach(function(p,pi){
+          var ben=(data["p_"+pi+"_ben"]||"").trim(), lin=(data["p_"+pi+"_lin"]||"").trim(), sel=data["p_"+pi+"_sell"]||"";
+          if(ben||lin||sel) rows.push("   "+p+": "+[ben,lin,sel].filter(Boolean).join(" | "));
+        });
+        if(rows.length) lines.push(q.n+". Os 23 produtos:\n"+rows.join("\n"));
+      }else{
+        var v=data[q.id];
+        if(Array.isArray(v)) v=v.join(", ");
+        if(v!=null && String(v).trim()) lines.push(q.n+". "+q.t.replace(/\s+/g," ")+"\n   R: "+String(v).trim());
+      }
+    });
+    if(lines.length){
+      out.push("== BLOCO "+(bi+1)+": "+b.title.toUpperCase()+" ==","");
+      out.push(lines.join("\n\n"),"");
+    }
+  });
+  var p=Math.round(filled()/TOTAL*100);
+  out.push("--- "+p+"% preenchido ---");
+  return out.join("\n");
+}
+
+function toast(msg){
+  var t=$("#toast"); t.textContent=msg; t.classList.add("on");
+  setTimeout(function(){t.classList.remove("on")},2600);
+}
+function copyText(txt){
+  if(navigator.clipboard && window.isSecureContext){
+    return navigator.clipboard.writeText(txt);
+  }
+  return new Promise(function(res,rej){
+    var ta=document.createElement("textarea");
+    ta.value=txt; ta.style.position="fixed"; ta.style.opacity="0";
+    document.body.appendChild(ta); ta.select();
+    try{ document.execCommand("copy"); res(); }catch(e){ rej(e); }
+    document.body.removeChild(ta);
+  });
+}
+
+function buildSummary(){
+  var p=Math.round(filled()/TOTAL*100);
+  $("#final-sub").textContent = p<40
+    ? "Você respondeu "+p+"% e já dá pra começar. Toca no botão que as respostas vão pro WhatsApp escritas, é só apertar enviar. Depois dá pra voltar nesse mesmo link e completar o resto."
+    : "Você respondeu "+p+"%. Toca no botão abaixo que as respostas vão pro WhatsApp já escritas, é só apertar enviar.";
+}
+
+$("#send-wa").addEventListener("click",function(){
+  var txt=buildText();
+  var base="https://wa.me/"+(WHATSAPP||"")+"?text=";
+  var url=base+encodeURIComponent(txt);
+  if(url.length>7000){
+    copyText(txt).then(function(){
+      toast("Respostas copiadas. Cola no WhatsApp que abriu.");
+    }).catch(function(){
+      toast("Usa o botão Baixar como arquivo e me envia o arquivo.");
+    });
+    window.open(base+encodeURIComponent("Respondi o questionário de branding, vou colar aqui embaixo:"),"_blank");
+  }else{
+    window.open(url,"_blank");
+  }
+});
+$("#copy-all").addEventListener("click",function(){
+  copyText(buildText()).then(function(){ toast("Copiado. Agora é só colar onde quiser."); })
+  .catch(function(){ toast("Não consegui copiar, tenta o botão de baixar."); });
+});
+$("#download").addEventListener("click",function(){
+  var blob=new Blob([buildText()],{type:"text/plain;charset=utf-8"});
+  var a=document.createElement("a");
+  a.href=URL.createObjectURL(blob);
+  a.download="branding-tudo-leve.txt";
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){URL.revokeObjectURL(a.href)},1000);
+});
+
+progress();
+})();
+</script>
+</body>
+</html>
